@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Météo Express</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-black text-yellow-400 font-sans min-h-screen flex items-center justify-center p-4">
+
+  <div class="w-full max-w-md backdrop-blur-lg bg-white/5 rounded-3xl p-6 shadow-lg border border-yellow-400 space-y-6">
+    <h1 class="text-3xl font-bold text-center flex items-center justify-center gap-2">
+      <i class="fas fa-sun"></i> Météo Express
+    </h1>
+
+    <div class="flex gap-2">
+      <input type="text" id="cityInput" placeholder="Entrez une ville" class="flex-1 p-2 rounded-lg bg-black border border-yellow-400 text-yellow-300 placeholder-yellow-500 outline-none">
+      <button onclick="getWeather()" class="bg-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-400">Rechercher</button>
+    </div>
+
+    <div id="loader" class="text-center hidden text-yellow-500">Chargement...</div>
+
+    <div id="weatherBox" class="text-center space-y-2 hidden">
+      <img id="icon" class="mx-auto w-20 h-20" />
+      <div id="temp" class="text-4xl font-bold"></div>
+      <div id="description" class="italic capitalize"></div>
+      <div id="humidity"></div>
+      <div id="wind"></div>
+    </div>
+
+    <div id="error" class="text-red-500 text-center font-bold hidden">Ville non trouvée.</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
